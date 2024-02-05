@@ -35,8 +35,7 @@ data "aws_subnets" "public" {
 #cluster provision
 resource "aws_eks_cluster" "example" {
   name     = "EKS_CLOUD"
- availability_zone = "us-east-1a"
-  role_arn = aws_iam_role.example.arn
+role_arn = aws_iam_role.example.arn
 
   vpc_config {
     subnet_ids = data.aws_subnets.public.ids
